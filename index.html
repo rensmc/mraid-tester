@@ -21,14 +21,14 @@
     <form id="setup" name="setup">
 
         <!-- Tag Source: -->
-        <textarea class="form-control" name="adFragment" id="adFragment" rows="18" cols="100" placeHolder="Enter code..." ></textarea>
+        <textarea class="form-control code" name="adFragment" id="adFragment" rows="18" cols="100" placeHolder="Enter code here..." autofocus></textarea>
+        <small>Note: Always remember to allow popup windows for this page, so the device simulator can work properly.</small>
         <br/><br/>
 
         <table cellspacing="1">
             <tr>
-              <td><input class="btn btn-lg btn-default" type="button" value="Render" onclick="renderHtmlAd()"/></td>
-                &nbsp;
-              <td><input class="btn btn-lg btn-default" type="button" value="Rotate" onclick="rotate()"/></td>
+              <td><input class="btn btn-lg btn-default" type="button" value="Render" onclick="renderHtmlAd()"/> </td>
+              <td> <input class="btn btn-lg btn-default" type="button" value="Rotate" onclick="rotate()"/></td>
             </tr>
         </table>
 
