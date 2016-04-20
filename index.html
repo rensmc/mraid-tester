@@ -1,44 +1,45 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>MRAID Preview</title>
 
-    <!-- PRIMARY CODE -->
-    <script type="text/javascript" src="safari/mraidview.js" language="javascript"></script>
-    <script type="text/javascript" src="safari/main.js" language="javascript"></script>
-    <script type="text/javascript" src="safari/orientation-widget.js" defer="defer"></script>
-    
-    <!-- BOOTSTRAP STYLES (Just to make it look fancier) -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-</head>
-            
-<body style="background-color:#EBF5F9;" onunload="closeAdIfOpen()">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>MRAID Preview</title>
 
-<div class="container" id="previewControls" align="center">
-    <h1>Start MRAID Preview</h1>
+        <!-- PRIMARY CODE -->
+        <script type="text/javascript" src="safari/mraidview.js" language="javascript"></script>
+        <script type="text/javascript" src="safari/main.js" language="javascript"></script>
+        <script type="text/javascript" src="safari/orientation-widget.js" defer="defer"></script>
 
-    <form id="setup" name="setup">
+        <!-- BOOTSTRAP STYLES (Just to make it look a little fancier) -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    </head>
 
-        <!-- Tag Source: -->
-        <textarea class="form-control code" name="adFragment" id="adFragment" rows="18" cols="100" placeHolder="Enter code here..." autofocus></textarea>
-        <small>Note: Always remember to allow popup windows for this page, so the device simulator can work properly.</small>
-        <br/><br/>
+    <body style="background-color:#EBF5F9;" onunload="closeAdIfOpen()">
 
-        <table cellspacing="1">
-            <tr>
-              <td><input class="btn btn-lg btn-default" type="button" value="Render" onclick="renderHtmlAd()"/> </td>
-              <td> <input class="btn btn-lg btn-default" type="button" value="Rotate" onclick="rotate()"/></td>
-            </tr>
-        </table>
+        <div class="container" id="previewControls" align="center">
+            <h1>Start MRAID Preview</h1>
 
-    </form>
-    
-    <p>*You can <code>copy + paste</code> this <a target="_blank" href="code.txt">sample code</a> to test the tool.</p>
+            <form id="setup" name="setup">
 
-</div>
-<script>
- //$(document).ready(function () {orientationWidget.init();logInit();});
-</script>
-</body>
+                <!-- Tag Source: -->
+                <textarea class="form-control code" name="adFragment" id="adFragment" rows="18" cols="100" placeHolder="Enter code here..." autofocus></textarea>
+                <small>Note: Always remember to allow popup windows for this page, so the device simulator can work properly.</small>
+                <br/>
+                <br/>
+
+                <table cellspacing="1">
+                    <tr>
+                        <td><input class="btn btn-lg btn-default" type="button" value="Render" onclick="renderHtmlAd()" /> </td>
+                        <td> <input class="btn btn-lg btn-default" type="button" value="Rotate" onclick="rotate()" /></td>
+                    </tr>
+                </table>
+
+            </form>
+
+            <p>*You can <code>copy + paste</code> this <a target="_blank" href="code.txt">sample code</a> to test the tool.</p>
+
+        </div>
+        <!--.container-->
+    </body>
+
 </html>
