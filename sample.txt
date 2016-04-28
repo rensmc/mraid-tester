@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta http-equiv="Content-Type" content="text/html, charset=UTF-8">   
+<script>
+
+</script>
+       <script src="mraid.js"></script>     
+       <script type="text/javascript">
+           var campaign_id    = '{[campaign_id]}';
+           var creative_id    = '{[creative_id]}';
+           var location_id    = '{[location_id]}';
+           var mraid_ad_id     = '{[mraid_ad_id]}';
+           var strStatsUrl     = "{[statsUrl]}";  
+
+
+           function saveStats(query, urlRedirect) {
+              query = (typeof query == 'undefined') ? '' : query;
+
+              urlRedirect = (typeof urlRedirect == 'undefined') ? '' : urlRedirect;
+
+              iHttp.async = true;
+              redirectMade = false;
+
+              console.log(strStatsUrl + query);
+
+              try {
+
+                      iHttp.call(strStatsUrl + query);
+                      iHttp.request.timeout = 4000;
+
+                      iHttp.request.onreadystatechange = function(){
+
+                              if (iHttp.request.readyState == 4){
+                                     
+                                      clearTimeout(callAbortTimeout);
+                                      if(urlRedirect){
+                                              if (!redirectMade){
+                                                      if(_os == 'WINDOWS'){
+                                                              window.external.notify(urlRedirect);
+                                                      }else{
+                                                              document.location = urlRedirect;
+                                                      }                        
+                                                      redirectMade = true;
+                                              }
+                                      }
+                              }
+                      }
+
+              } catch(e) {
+                  //console.log(e);
+              }
+
+
+              callAbortTimeout = setTimeout(function(){
+                     
+                      if(urlRedirect){
+                              if (!redirectMade){
+                                      if(_os == 'WINDOWS'){
+                                              window.external.notify(urlRedirect);
+                                      }else{
+                                              document.location = urlRedirect;
+                                      }
+                                      redirectMade = true;
+                              }
+                      }
+              }, 4000);
+          }
+          var iHttp={iReq:function(){if(window.XMLHttpRequest){return new XMLHttpRequest()}else{if(window.ActiveXObject){return new ActiveXObject("Microsoft.XMLHTTP")}}return false},async:true,call:function(a){this.request=this.iReq();if(this.request){this.request.open("GET",a,this.async);this.request.send()}},post:function(a,b){this.request=this.iReq();if(this.request){this.request.open("POST",a,this.async);this.request.setRequestHeader("Content-type","application/x-www-form-urlencoded");this.request.send(b)}}};
+         
+          var call_client = function(creative_id, event_type, event_name, creative_area_id, advertised_game) {
+
+              if(typeof event_type == 'undefined'){
+                  event_type = "GLADS_SHOW_BANNER";
+              }
+              if(typeof event_name == 'undefined'){
+                  event_name = "impression";
+              }                
+
+              // event IN ("impression","click","action_complete")
+              statsParams = "&event="+event_name+"&event_type="+event_type+"&creative_id="+creative_id;
+              if(typeof creative_area_id != 'undefined') {
+                  statsParams += "&creative_area_id="+creative_area_id;
+              }
+              if(typeof advertised_game != 'undefined') {
+                  statsParams += "&game_adv="+advertised_game;
+              }
+              saveStats(statsParams);
+          }
+         
+          window.onload = function(e) {                
+
+              call_client(creative_id);
+             
+          }
+       </script>
+   </head>
+<body>
+   <div class="celtra-ad-v3">
+<img src="data:image/png,celtra" style="display: none" onerror="
+(function(img) {
+var params = {'clickUrl':'{[GLClickUrl]}','preferredClickThroughWindow':'','clickEvent':'advertiser','externalAdServer':'Custom'};
+var req = document.createElement('script');
+req.id = params.scriptId = 'celtra-script-' + (window.celtraScriptIndex = (window.celtraScriptIndex||0)+1);
+params.clientTimestamp = new Date/1000;
+var src = (window.location.protocol == 'https:' ? 'https' : 'http') + '://ads.celtra.com/8a9dccfb/web.js?';
+for (var k in params) {
+src += '&amp;' + encodeURIComponent(k) + '=' + encodeURIComponent(params[k]);
+}
+req.src = src;
+img.parentNode.insertBefore(req, img.nextSibling);
+})(this);
+"/>
+</div>
+</body>    
+</html>
