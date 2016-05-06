@@ -71,12 +71,14 @@ mraidview.setSupports(features.vpaid.name.checked);
 
 function rotate(){
   var form = document.forms.setup;
+  
   var temp = specs.screenWidth.value;
   var temp2 = specs.adWidth.value;
   
   specs.screenWidth.value = specs.screenHeight.value;
   specs.screenHeight.value = temp;
   
+  //Swap width and height values for a quick-seamless rotation
   specs.adWidth.value = specs.adHeight.value;
   specs.adMaxWidth = specs.adHeight.value;
   specs.adHeight.value = temp2;
