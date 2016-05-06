@@ -78,7 +78,7 @@ function rotate(){
   specs.screenWidth.value = specs.screenHeight.value;
   specs.screenHeight.value = temp;
   
-  //Swap width and height values for a quick-seamless rotation
+  //SWAPPED WIDTH AND HEIGHT VALUES TO KEEP IT SIMPLE
   specs.adWidth.value = specs.adHeight.value;
   specs.adMaxWidth = specs.adHeight.value;
   specs.adHeight.value = temp2;
