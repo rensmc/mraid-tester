@@ -1,7 +1,7 @@
 # About mraid-tester
-This is an oversimplified demo im working on for preview/testing MRAID-type creatives, using the certified (and quite awesome) webtester tool developed by https://github.com/mraid/webtester
+This is an oversimplified demo im working on for preview/testing MRAID-type creatives, using the great, certified webtester tool developed by https://github.com/mraid/webtester
 
-You can see my progress here:
+You can run the web tester demonstration here:
 http://renemc.github.io/mraid-tester/
 
 In their own words, "MRAID WebTester is a community-driven tool to run MRAID ad units in a web environment. This provides a way to confirm that you are using the MRAID design specification correctly even if you don't have an SDK or app. It passes the compliance ad test provided by the IAB."
